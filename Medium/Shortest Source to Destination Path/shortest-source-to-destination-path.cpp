@@ -31,11 +31,8 @@ class Solution {
            int row = q.front().second.first;
            int col = q.front().second.second;
            
-           int d=q.front().first;
-           int r=q.front().second.first;
-           int c=q.front().second.second;
-           
            q.pop();
+           
             if(row==X && col==Y)
             {
                 return dist[X][Y];
@@ -47,7 +44,8 @@ class Solution {
                int ncol=col+delCol[i];
                
                if(nrow>=0 && ncol>=0 && nrow<N && ncol<M &&
-               A[nrow][ncol]==1){
+               A[nrow][ncol]==1)
+               {
                    if(distance + 1<dist[nrow][ncol]){
                        dist[nrow][ncol]=distance+1;
                        q.push({dist[nrow][ncol],{nrow,ncol}});
