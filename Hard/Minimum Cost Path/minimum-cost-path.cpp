@@ -15,10 +15,7 @@ class Solution
         int n = grid.size();
         int m = grid[0].size();
         
-        int sum=0;
-        
-        
-        
+      
         vector<vector<int>>cost(n,vector<int>(m,1e9));
         
         cost[0][0]=grid[0][0];
@@ -28,11 +25,6 @@ class Solution
             greater<pair<int,pair<int,int>>>> pq;
         
         pq.push({cost[0][0],{0,0}});
-        
-        // vector<vector<int>>vis(n,vector<int>(m,1e9));
-        // vis[0][0]=1;
-        
-        
         
         int X=n-1, Y=m-1;
         
