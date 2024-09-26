@@ -11,23 +11,24 @@ class Solution {
     // to gain an increase in altitude with each step.
     int maxStep(vector<int>& arr) 
     {
-        int n = arr.size();
-        int count = 0;
+        int maxi=0;
         
-        int maxi = INT_MIN;
+        int cnt=0;
         
-        for(int i=1; i<n; i++)
+        for(int i=1; i<arr.size(); i++)
         {
             if(arr[i]>arr[i-1])
             {
-                count++;
+                cnt++;
             }
             else{
-               maxi = max(maxi, count);
-                count = 0;
+                maxi = max(maxi,cnt);
+                cnt=0;
             }
         }
-        return max(maxi, count);
+        
+        maxi = max(maxi,cnt);
+        return maxi;
     }
 };
 
